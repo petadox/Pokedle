@@ -1,0 +1,29 @@
+{
+  "name": "pokedle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/petadox/Pokedle.git",
+  "author": "petadox <jesusgpfib@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex:make": "knex migrate:make --knexfile src/knexfile.js",
+    "knex:migrate": "knex migrate:latest --knexfile src/knexfile.js",
+    "knex:rollback": "knex migrate:rollback --knexfile src/knexfile.js",
+    "knex:seed": "knex seed:run --knexfile src/knexfile.js"
+  },
+  "dependencies": {
+    "axios": "^1.1.2",
+    "bcrypt": "^3.0.6",
+    "core-js": "^3.15.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "knex": "^2.3.0",
+    "moment": "^2.24.0",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "objection": "^3.0.1"
+  }
+}
