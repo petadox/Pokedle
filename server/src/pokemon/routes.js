@@ -3,9 +3,10 @@ const pokemon = require('./service.js')
 
 let router = express.Router()
 
-router.get('/all-names', async (req, res) => {
-  let pokemonNames = await pokemon.getAllPokemonNames()
-  res.json(pokemonNames)
+router.get('/all', async (req, res) => {
+  let pokemons = await pokemon.getAllPokemons()
+  console.log('pokemons', pokemons)
+  res.json(pokemons)
 })
 
 router.get('/random', async (req, res) => {

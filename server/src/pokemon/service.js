@@ -92,9 +92,14 @@ async function getPokemonSpecies(id) {
   return (await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)).data
 }
 
-exports.getAllPokemonNames = async () => {
-  let pokemonNames = await Pokemon.query().select('name')
-  return pokemonNames
+exports.getAllPokemons = async () => {
+  let pokemons = await Pokemon.query().select('name', 'sprite')
+  return pokemons.map(pokemon => (
+    {
+      label: pokemon.name,
+      sprite: pokemon.sprite
+    }
+  ))
 }
 
 exports.getPokemonByName = async (name) => {

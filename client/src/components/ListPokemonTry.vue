@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex flex-row pt-6 space-x-1 font-bold">
+    <div class="flex flex-row pt-6 space-x-1 font-bold text-white">
       <div class="flex justify-center w-24">Pokemon</div>
       <div class="flex justify-center w-24">Types</div>
       <div class="flex justify-center w-24">Preevolution</div>
@@ -14,7 +14,7 @@
         class="py-2"
         :pokemon="pokemon"
         :unknown="unknown"
-        @winner="printWinner()"
+        @winner="this.$emit('winner')"
       />
     </div>
   </div>
@@ -36,11 +36,6 @@ export default {
   },
   components: {
     PokemonTry,
-  },
-  methods: {
-    printWinner() {
-      console.log("ACERTASTE!");
-    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="text-2xl py-10 text-center">Pokedle!</h1>
+  <div class="flex justify-center">
+    <img src="@/assets/pokedle.png" class="w-96 h-40" alt="Pokedle image" />
   </div>
 </template>
 

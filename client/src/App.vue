@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center">
+  <body class="flex justify-center">
     <router-view />
-  </div>
+  </body>
 </template>
 
 <script>
@@ -14,9 +14,10 @@ export default {
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-/*
-div {
-  background-image: url("@/assets/background.jpeg");
+
+body {
+  background-image: url("@/assets/black-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-*/
 </style>
