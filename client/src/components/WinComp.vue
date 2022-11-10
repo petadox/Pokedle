@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>Congratulations, you guessed today Pokemon!</h4>
+    <h4 class="text-white">Congratulations, you guessed today Pokemon!</h4>
   </div>
 </template>
 
