@@ -5,7 +5,6 @@ let router = express.Router()
 
 router.get('/all', async (req, res) => {
   let pokemons = await pokemon.getAllPokemons()
-  console.log('pokemons', pokemons)
   res.json(pokemons)
 })
 

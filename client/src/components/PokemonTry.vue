@@ -1,7 +1,10 @@
 <template>
   <div v-if="Object.keys(pokemon).length !== 0">
     <div class="flex flex-row space-x-1">
-      <div class="flex justify-center w-24 border-4 rounded-xl">
+      <div
+        class="flex justify-center w-24 border-4 rounded-xl"
+        :class="getBgColor(pokemon.sprite, unknown.sprite)"
+      >
         <img :src="pokemon.sprite" />
       </div>
       <div
