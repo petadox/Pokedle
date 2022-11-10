@@ -1,6 +1,7 @@
 <template>
   <div>
     <q-select
+      v-if="!gameFinished"
       outlined
       v-model="pokemonName"
       label="Try a pokemon..."
