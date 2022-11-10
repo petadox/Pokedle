@@ -93,13 +93,14 @@ async function getPokemonSpecies(id) {
 }
 
 exports.getAllPokemons = async () => {
-  let pokemons = await Pokemon.query().select('name', 'sprite')
-  return pokemons.map(pokemon => (
-    {
+  let pokemons = await Pokemon.query().select('id', 'name', 'sprite')
+  return pokemons.reduce((res, pokemon) => {
+    res[pokemon.id] = {
       label: pokemon.name,
       sprite: pokemon.sprite
     }
-  ))
+    return res
+  }, {})
 }
 
 exports.getPokemonByName = async (name) => {

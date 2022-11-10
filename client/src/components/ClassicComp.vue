@@ -96,6 +96,7 @@ export default {
         .get(`http://localhost:3000/pokemon/${name}`)
         .then((response) => {
           this.listOfGuesses.push(response.data);
+          delete this.allPokemons[response.data.id];
         })
         .catch((e) => {
           console.log("Error on pokemon by name: ", e);
@@ -109,7 +110,8 @@ export default {
 
       update(() => {
         const input = val.toLowerCase();
-        this.filteredPokemons = this.allPokemons.filter((pokemon) =>
+        const arrayOfPokemons = Object.values(this.allPokemons);
+        this.filteredPokemons = arrayOfPokemons.filter((pokemon) =>
           pokemon.label.toLowerCase().startsWith(input)
         );
       });
