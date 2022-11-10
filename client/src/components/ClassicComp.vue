@@ -34,15 +34,15 @@
         />
       </template>
     </q-select>
+    <div v-if="gameFinished">
+      <win-comp />
+    </div>
     <div>
       <list-pokemon-try
         :pokemons="listOfGuesses"
         :unknown="unknownPokemon"
         @winner="gameFinished = true"
       />
-    </div>
-    <div v-if="gameFinished">
-      <win-comp />
     </div>
   </div>
 </template>
