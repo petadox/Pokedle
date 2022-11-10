@@ -9,7 +9,7 @@
       <div class="flex justify-center w-24">Height</div>
       <div class="flex justify-center w-24">Generation</div>
     </div>
-    <div v-for="pokemon in pokemons" :key="pokemon.id">
+    <div v-for="pokemon in reversedPokemons" :key="pokemon.id">
       <pokemon-try
         class="py-2"
         :pokemon="pokemon"
@@ -36,6 +36,11 @@ export default {
   },
   components: {
     PokemonTry,
+  },
+  computed: {
+    reversedPokemons() {
+      return this.pokemons.slice().reverse();
+    },
   },
 };
 </script>
